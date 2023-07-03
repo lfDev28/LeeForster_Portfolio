@@ -1,0 +1,17 @@
+---
+import Icon from 'astro-icon';
+
+const { item } = Astro.props;
+---
+
+<div title={item.name} class="bg-primary-600 rounded-lg w-20 h-10 flex items-center justify-center">
+	{
+		item.icon ? (
+			<Icon name={item.icon} class="w-10 h-10 text-white" />
+		) : (
+			<iconify-icon class="text-white" width="32" height="32" icon="simple-icons:trpc" />
+		)
+	}
+</div>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

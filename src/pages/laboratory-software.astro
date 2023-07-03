@@ -1,0 +1,65 @@
+---
+
+import Layout from '../layouts/PageLayout.astro';
+import SkillsItem from '../components/SkillsItem.astro';
+
+
+const stack = [
+	{
+		name: 'Typescript',
+		icon: 'mdi:language-typescript',
+	},
+	{
+		name: 'TailwindCSS',
+		icon: 'mdi:tailwind',
+	},
+	{
+		name: 'React',
+		icon: 'mdi:react',
+	},
+	{
+		name: 'MongoDB',
+		icon: 'teenyicons:mongodb-outline',
+	},
+	{
+		name: 'Flask',
+		icon: 'logos:flask',
+	},
+	{
+		name: 'Python',
+		icon: 'mdi:language-python',
+	},
+	{
+		name: 'Web Sockets',
+		icon: 'logos:websocket',
+	},
+];
+---
+
+<Layout >
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-12 md:py-20">
+			<div class="flex justify-between">
+				<h1 class="text-xl font-bold pb-10">Laboratory Software Thesis Project</h1>
+			</div>
+			<div class="space-y-6">
+				<p>
+					As a part of my Honours Thesis I chose to explore the effect that the ever expanding world of web technology
+					can have on the development of laboratory software. The project is currently still underway with an MVP having
+					been fully developed using the tech stack seen below. This project has allowed me to master my skills within
+					Full Stack web development space, utilising many tools and technologies to create a fully functional web
+					application that communicates to high tech laboratory equipment to assist researchers of LED technology in
+					their research.
+				</p>
+				<p>
+					The site is built using a modern stack of technologies, which can be seen below. The project was restricted to
+					the use of Python for the backend, however the rest were chosen based off of a review of the literature in the
+					field.
+				</p>
+				<div class="grid grid-cols-8 gap-6 items-center">
+					{stack.map((item) => <SkillsItem item={item} />)}
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

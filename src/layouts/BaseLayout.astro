@@ -1,0 +1,24 @@
+---
+import '../base.css'
+import BasicScripts from '../components/BasicScripts.astro';
+import { Tooltips } from 'astro-tooltips';
+
+---
+
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
+	<head>
+		<Tooltips interactive={false} delay={[15, 500]} />
+	</head>
+
+	<body class="antialiased text-gray-900 dark:text-slate-300 tracking-tight bg-white dark:bg-slate-900">
+		<slot />
+		<BasicScripts />
+
+		<style is:global>
+			img {
+				content-visibility: auto;
+			}
+		</style>
+	</body>
+</html>

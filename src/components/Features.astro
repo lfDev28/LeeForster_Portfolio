@@ -1,0 +1,73 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	[
+		{
+			title: 'Next JS / React',
+			description: 'For performant and highly scaleable web apps, Next JS is the way to go.',
+			icon: 'teenyicons:nextjs-outline',
+		},
+		{
+			title: 'Typescript',
+			description:
+				'Typesafety is a must in modern fullstack development, and Typescript is the best way to achieve it.',
+			icon: 'mdi:language-typescript',
+		},
+		{
+			title: 'Tailwind',
+			description: 'For simple and effective inline styling, Tailwind CSS is the way to go.',
+			icon: 'tabler:brand-tailwind',
+		},
+	],
+	[
+		{
+			title: 'MySql',
+			description: 'For relational databases, MySql is the best choice. It is fast, reliable, and easy to use.',
+			icon: 'simple-icons:mysql',
+		},
+		{
+			title: 'tRPC',
+			description: 'For modern typesafe APIs that can be developed at speed and scale, tRPC is the way to go.',
+			icon: 'tabler:api',
+		},
+		{
+			title: 'Astro JS',
+			description: 'For extremely fast page loads on basic static sites, Astro JS is best in class',
+			icon: 'simple-icons:astro',
+		},
+	],
+];
+---
+
+<section class="scroll-mt-16" id="features">
+	<div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+		<div class="mb-10 md:mx-auto sm:text-center md:mb-12 max-w-3xl">
+			<p class="text-base text-primary-600 dark:text-primary-200 font-semibold tracking-wide uppercase">ABOUT ME</p>
+			<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+				What tech I'm most passionate about right now
+			</h2>
+		</div>
+		<div class="grid mx-auto space-y-6 md:grid-cols-2 md:space-y-0">
+			{
+				items.map((subitems) => (
+					<div class="space-y-8 sm:px-8">
+						{subitems.map(({ title, description, icon }) => (
+							<div class="flex flex-row max-w-md">
+								<div class="mb-4 mr-4">
+									<div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary-500 dark:bg-primary-700">
+										{icon && <Icon name={icon} class="w-6 h-6 text-white icon-light" />}
+									</div>
+								</div>
+								<div>
+									<h3 class="mb-3 text-xl font-bold">{title}</h3>
+									<p class="text-gray-600 dark:text-slate-400">{description}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

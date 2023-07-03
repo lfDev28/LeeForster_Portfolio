@@ -1,0 +1,190 @@
+---
+import { Icon } from 'astro-icon';
+import SkillsItem from './SkillsItem.astro';
+
+// const item = { name: 'Typescript', icon: 'mdi:language-typescript' };
+
+const comfortable = [
+	{
+		name: 'Typescript',
+		icon: 'mdi:language-typescript',
+	},
+	{
+		name: 'HTML',
+		icon: 'mdi:language-html5',
+	},
+	{
+		name: 'CSS',
+		icon: 'mdi:language-css3',
+	},
+	{
+		name: 'TailwindCSS',
+		icon: 'mdi:tailwind',
+	},
+	{
+		name: 'React',
+		icon: 'mdi:react',
+	},
+	{
+		name: 'NextJS',
+		icon: 'teenyicons:nextjs-outline',
+	},
+	{
+		name: 'NodeJS',
+		icon: 'mdi:nodejs',
+	},
+	{
+		name: 'Express',
+		icon: 'logos:express',
+	},
+	{
+		name: 'MongoDB',
+		icon: 'teenyicons:mongodb-outline',
+	},
+	{
+		name: 'MySQL',
+		icon: 'simple-icons:mysql',
+	},
+	{
+		name: 'PostgreSQL',
+		icon: 'simple-icons:postgresql',
+	},
+	{
+		name: 'Prisma',
+		icon: 'simple-icons:prisma',
+	},
+	{
+		name: 'GitHub',
+		icon: 'mdi:github',
+	},
+	{
+		name: 'tRPC',
+	},
+
+	{
+		name: 'Java',
+		icon: 'mdi:language-java',
+	},
+	{
+		name: 'C',
+		icon: 'teenyicons:c-outline',
+	},
+];
+
+const mastering = [
+	{
+		name: 'Python',
+		icon: 'mdi:language-python',
+	},
+	{
+		name: 'Web Sockets',
+		icon: 'simple-icons:socketdotio',
+	},
+	{
+		name: 'C#',
+		icon: 'teenyicons:c-sharp-outline',
+	},
+	{
+		name: 'React Native',
+		icon: 'tabler:brand-react-native',
+	},
+];
+---
+
+<section class="bg-primary-50 dark:bg-slate-800">
+	<div class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+		<div class="grid gap-6 row-gap-10 md:grid-cols-2">
+			<div class="md:pb-6 md:pr-16">
+				<h2 class="mb-8 text-3xl lg:text-4xl font-bold font-heading">Timeline</h2>
+				<div class="flex">
+					<div class="flex flex-col items-center mr-4">
+						<div>
+							<div class="flex items-center justify-center w-12 h-12 rounded-full border-primary-600 border-2">
+								<span>
+									<p class="text-sm font-bold text-gray-900 dark:text-slate-300">2019</p>
+								</span>
+							</div>
+						</div>
+						<div class="w-px h-full bg-gray-300 dark:bg-slate-500"></div>
+					</div>
+					<div class="pt-1 pb-8">
+						<p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">First line of code</p>
+
+						<p class="text-gray-600 dark:text-slate-400">
+							In my first university class, with no knowledege of programming, I wrote my first line of code in a
+							mandatory Java unit. From there I was hooked.
+						</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="flex flex-col items-center mr-4">
+						<div>
+							<div class="flex items-center justify-center w-12 h-12 rounded-full border-primary-600 border-2">
+								<p class="text-sm font-bold text-gray-900 dark:text-slate-300">2019</p>
+							</div>
+						</div>
+						<div class="w-px h-full bg-gray-300 dark:bg-slate-500"></div>
+					</div>
+					<div class="pt-1 pb-8">
+						<p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">The web</p>
+						<p class="text-gray-600 dark:text-slate-400">
+							After admittedly spending too much time watching pointless tutorials, I began building sites. All done
+							while studying my primary degree of mecahtronics engineering.
+						</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="flex flex-col items-center mr-4">
+						<div>
+							<div class="flex items-center justify-center w-12 h-12 rounded-full border-primary-600 border-2">
+								<p class="text-sm font-bold text-gray-900 dark:text-slate-300">2020</p>
+							</div>
+						</div>
+						<div class="w-px h-full bg-gray-300 dark:bg-slate-500"></div>
+					</div>
+					<div class="pt-1 pb-8">
+						<p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">Production Time</p>
+						<p class="text-gray-600 dark:text-slate-400">
+							In 2020, I approached my old boss with the eagerness to work on the companies web app. From there, I have
+							been maintaining the app till current date. To then rewrite the entire app with more modern technologies!
+						</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="flex flex-col items-center mr-4">
+						<div>
+							<div
+								class="flex items-center justify-center w-12 h-12 rounded-full border-primary-600 border-2 bg-primary-600"
+							>
+								<Icon name="tabler:check" class="w-6 h-6 text-white dark:text-slate-200" />
+							</div>
+						</div>
+					</div>
+					<div class="pt-1">
+						<p class="mb-2 text-xl font-bold text-gray-900 dark:text-slate-300">Today</p>
+						<p class="text-gray-600 dark:text-slate-400"></p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div>
+					<h2 class="mb-8 text-3xl lg:text-4xl font-bold font-heading">Skills</h2>
+				</div>
+				<div>
+					<strong>Skills Im Comfortable with</strong>
+					<div class="grid grid-cols-4 gap-1 items-center py-4">
+						{comfortable.map((skill) => <SkillsItem item={skill} />)}
+						<div></div>
+					</div>
+					<div>
+						<strong>Skills Im Still Mastering</strong>
+						<div class="grid grid-cols-4 gap-1 items-center py-4">
+							{mastering.map((skill) => <SkillsItem item={skill} />)}
+							<div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

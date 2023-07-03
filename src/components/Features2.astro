@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	{
+		title: 'CRM Dashboard and Ticket System',
+		description:
+			'CRM Dashboard and Ticket System built using the T3 Stack, currently in production for a client, click to read more.',
+		icon: 'flat-color-icons:home',
+		link: '/business-management-tool',
+	},
+	{
+		title: 'Golang SMTP Server',
+		description: 'Golang Office 365 SMTP Mail Server Lambda Function, click to see more.',
+		icon: 'tabler:mail',
+		link: '/smtp-mail-server',
+	},
+	{
+		title: 'Laboratory Equipment Web App',
+		description: 'Laboratory Equipment Web App built using Flask and React, click to see more.',
+		icon: 'icomoon-free:lab',
+		link: '/laboratory-software',
+	},
+	{
+		title: 'Time Complexity Calculator',
+		description: 'Time Complexity Calculator Chrome Extension, click to see more.',
+		icon: 'mdi:calculator',
+		link: '/time-complexity-calculator',
+	},
+];
+---
+
+<section class="relative">
+	<div class="absolute inset-0 bg-primary-50 dark:bg-slate-800 pointer-events-none" aria-hidden="true"></div>
+	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+			<div class="mb-8 text-center">
+				<h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Live Projects</h2>
+			</div>
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start my-12 dark:text-white">
+				{
+					items.map(({ title, description, icon, link }) => (
+						<a href={link}>
+							<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800 h-60">
+								<div class="flex items-center mb-4">
+									<Icon name={icon} class="w-12 h-12" />
+
+									<div class="ml-4 text-xl font-bold">{title}</div>
+								</div>
+								<p class="text-gray-500 dark:text-gray-400 text-md">{description}</p>
+							</div>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

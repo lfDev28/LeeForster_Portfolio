@@ -1,0 +1,100 @@
+---
+
+import Layout from '../layouts/PageLayout.astro';
+import SkillsItem from '../components/SkillsItem.astro';
+
+
+const stack = [
+	{
+		name: 'Typescript',
+		icon: 'mdi:language-typescript',
+	},
+	{
+		name: 'TailwindCSS',
+		icon: 'mdi:tailwind',
+	},
+	{
+		name: 'React',
+		icon: 'mdi:react',
+	},
+	{
+		name: 'NextJS',
+		icon: 'teenyicons:nextjs-outline',
+	},
+	{
+		name: 'MySQL',
+		icon: 'simple-icons:mysql',
+	},
+	{
+		name: 'Prisma',
+		icon: 'simple-icons:prisma',
+	},
+	{
+		name: 'GitHub',
+		icon: 'mdi:github',
+	},
+	{
+		name: 'tRPC',
+	},
+];
+
+const oldStack = [
+	{
+		name: 'NodeJS',
+		icon: 'mdi:nodejs',
+	},
+	{
+		name: 'Express',
+		icon: 'logos:express',
+	},
+	{
+		name: 'MongoDB',
+		icon: 'teenyicons:mongodb-outline',
+	},
+	{
+		name: 'Mongoose',
+		icon: 'carbon:database-mongodb',
+	},
+	{
+		name: 'React',
+		icon: 'mdi:react',
+	},
+];
+---
+
+<Layout >
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-12 md:py-20">
+			<div class="flex justify-between">
+				<h1 class="text-xl font-bold pb-10">Business Management Tool</h1>
+				<!-- <a class="btn btn-primary sm:mb-0 h-12" href="http://helix-theta.vercel.app">Demo Site</a> -->
+			</div>
+			<div class="space-y-6">
+				<p>
+					This website was built to replace as well as upgrade an existing yet outdated business management tool. See
+					below for key areas. The site is what led me to developing a great passion for web development having
+					completely developed the site on my own, it showed me the amount of aspects of web development I still do not
+					know, and want to have the time to learn under greater, more experienced developers. This project allowed me
+					master all aspects of CRUD operations, authentication, security, S3 file uploading, database management and
+					much more. I believe this project has helped me to become a much better developer.
+				</p>
+				<p>The site is built using a modern stack of technologies, which can be seen below</p>
+				<div class="grid grid-cols-8 gap-6 items-center">
+					{stack.map((item) => <SkillsItem item={item} />)}
+				</div>
+				<p>
+					However, the existing site was originally developed with ASP.net C# using a Azure BaaS which I maintained for
+					a few years until the company saw fit that it was to be re-written.
+				</p>
+				<p>
+					A MVP was originally developed using a different set of technologies that I found to be less efficient with
+					development speeds, they can be seen below
+				</p>
+				<div class="grid grid-cols-5 gap-1 items-center py-4">
+					{oldStack.map((item) => <SkillsItem item={item} />)}
+				</div>
+				<p>This led me to overhauling the architecture into the more modern stack seen above</p>
+			</div>
+		</div>
+	</div>
+</Layout>
