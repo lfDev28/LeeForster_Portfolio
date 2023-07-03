@@ -30,6 +30,18 @@
 			document.documentElement.classList.toggle('dark');
 			localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 		});
+
+    const contactScroll = document.getElementById('contact-scroll');
+
+if (contactScroll) {
+  contactScroll.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('contact-form').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+}
+
     }
 
 
@@ -69,8 +81,11 @@ const retrieveInfo = () => {
 const submitBtn = document.querySelector('[type="submit"]')
 submitBtn?.addEventListener('click', submitForm)
 retrieveInfo()
-;[...document.querySelectorAll('input')][0]?.focus()
+;[...document.querySelectorAll('input')][0]
 // window.onload = () => {} // don't know why this wont work
+
+
+
 
 
 const sendmail = async () => {
