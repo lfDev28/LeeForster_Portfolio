@@ -85,6 +85,35 @@ retrieveInfo()
 // window.onload = () => {} // don't know why this wont work
 
 
+const downloadBtn = document.getElementById('download-btn')
+downloadBtn?.addEventListener('click', () => {
+  const link = document.createElement('a')
+  link.href = '/public/Lee_Forster_CV_Jul23.pdf'
+  link.download = 'Lee_Forster_CV_Jul23.pdf'
+  link.click()
+
+  // Send me an email if CV is dowloaded
+  sendEmailForDownload()
+
+})
+
+const sendEmailForDownload = async() => {
+  const data = await fetch('/api/sendmail.json', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name: 'CV Downloaded', email: 'downloaded notification', message: "Someone downloaded your resume"})
+}).then((res) => {
+  if (!res.ok) {
+    throw new Error(res.status)
+  }
+  return res.json()
+}).catch((err) => {
+  console.log('Error', err)
+})
+}
+
 
 
 
